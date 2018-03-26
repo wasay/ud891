@@ -21,6 +21,7 @@
     this.focusedButton = this.buttons[this.focusedIdx];
 
     this.el.addEventListener('keydown', this.handleKeyDown.bind(this));
+    //this.el.addEventListener('change', this.changeFocus.bind(this));
   }
 
   RadioGroup.prototype.handleKeyDown = function(e) {
@@ -32,6 +33,11 @@
         e.preventDefault();
 
         // This seems like a good place to do some stuff :)
+        if (this.focusedIdx === 0) {
+          this.focusedIdx = this.buttons.length - 1;
+        } else {
+          this.focusedIdx--;
+        }
 
         break;
 
@@ -43,6 +49,11 @@
         e.preventDefault();
 
         // This seems like a good place to do some stuff :)
+        if (this.focusedIdx === this.buttons.length - 1) {
+          this.focusedIdx = 0;
+        } else {
+          this.focusedIdx++;
+        }
 
         break;
       }
