@@ -20,7 +20,16 @@
     this.el.addEventListener('keydown', this.handleKeyDown.bind(this));
     this.el.addEventListener('click', this.toggle.bind(this));
 
-    // Any other set-up we want to do here?
+    // Initalize role and aria-checked state.
+    this.el.setAttribute('role', 'checkbox');
+    if (this.el.hasAttribute('checked'))
+    {
+        this.el.setAttribute('aria-checked', 'true');
+    }
+    else
+    {
+        this.el.setAttribute('aria-checked', 'false');
+    }
   }
 
   Checkbox.prototype.handleKeyDown = function(e) {
@@ -37,16 +46,17 @@
     if (this.el.hasAttribute('checked')) {
       this.el.removeAttribute('checked');
 
-      // Hmm.
-
+      // Keep checked attribute and aria-checked in sync.
+      this.el.setAttribute('aria-checked', 'false');
     } else {
       this.el.setAttribute('checked', '');
 
-      // Hmmmmm.
-
+      // Keep checked attribute and aria-checked in sync.
+      this.el.setAttribute('aria-checked', 'true');
     }
   };
 
+  // add aria attributes to all checkboxes
   var checkboxes = slice(document.querySelectorAll('.checkbox'));
   for (var checkbox of checkboxes)
     checkbox.logic = new Checkbox(checkbox);

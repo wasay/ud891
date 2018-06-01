@@ -35,10 +35,8 @@
         button.tabIndex = "-1";
       }
 
-
       button.setAttribute('role', 'radio');
     }
-
   }
 
   RadioGroup.prototype.handleKeyDown = function(e) {
@@ -102,7 +100,6 @@
     this.focusedButton.focus();
     this.focusedButton.setAttribute('checked', '');
     this.focusedButton.setAttribute('aria-checked', 'true');
-
   };
 
   var group1 = new RadioGroup('#group1');
