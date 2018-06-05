@@ -16,18 +16,38 @@ a:focus {
   margin: 0 8px;
 }
 
+.nav > li > a:hover,
 .nav > li > a:focus {
-  text-decoration: none;
-  background: transparent;
+  background: #E91E63;
+  color: #FFFFFF;
+  text-decoration: underline;
+  box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.8);
 }
 
 .jumbotron .mdl-button {
   background-color: #008b00;
   color: #FFFFFF;
+  box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.8);
+}
+
+.jumbotron .mdl-button:hover,
+.jumbotron .mdl-button:focus {
+  background-color: #E91E63;
+  color: #FFFFFF;
+  text-decoration: underline;
+  box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.8);
 }
 
 .mdl-button.raised {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
               0 3px 1px -2px rgba(0, 0, 0, .2),
               0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.mdl-button.raised:hover,
+.mdl-button.raised:focus {
+  background-color: #E91E63;
+  color: #FFFFFF;
+  text-decoration: underline;
+  box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.8);
 }
